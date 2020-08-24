@@ -11,7 +11,7 @@ connectDB();
 app.use(express.json({ extended: true }));
 
 //Puerto de la app
-const PORT = process.env.PRT || 4000;
+const port = process.env.PRT || 4000;
 
 //Importar rutas
 app.use('/api/users', require('./routes/users'));
@@ -20,6 +20,6 @@ app.use('/api/categories', require('./routes/categories'));
 app.use('/api/comics', require('./routes/comics'));
 
 //Arrancar el server
-app.listen(PORT, () => {
-    console.log(`the server is working in the port ${PORT}`);
+app.listen(port, '0.0.0.0', () => {
+    console.log(`the server is working in the port ${port}`);
 });
