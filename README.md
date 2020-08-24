@@ -2,7 +2,6 @@
 Final proyect web - api with node, express and mongo, 3 collections, can authenticate users via JWT, create categories, comies by categories and effectuate CRUD operations
 
 Manuel Alejandro Escobar Mira - Group 2
-
 <br>
 <h2>Dependencias</h2>
 <ul>
@@ -13,7 +12,6 @@ Manuel Alejandro Escobar Mira - Group 2
     <li>jsonwebtoken</li>
     <li>mongoose</li>
 </ul>
-
 <h2>Create User</h2>
 <p>The JWT of valid users are valid for 1 hour</p>
 <br>
@@ -22,7 +20,6 @@ Manuel Alejandro Escobar Mira - Group 2
 <img src="https://i.imgur.com/H62Espc.png" alt="create-user" border="0">
 <p>You can't register twice with the same email.</p>
 <br>
-
 <h2>Validate User</h2>
 <h3>All the passwords are encrypted and validated with the bcryptjs module</h3>
 <br>
@@ -33,7 +30,6 @@ Manuel Alejandro Escobar Mira - Group 2
 <img src="https://i.imgur.com/EUqS3Qo.png" alt="auth" border="0">
 <p>When you put correctly your auth data a JWT is generated from the validation in the crud opperations.</p>
 <br>
-
 <h2>Categories</h2>
 <br>
 <img src="https://i.imgur.com/IDBDEvw.png" alt="create-category" border="0">
@@ -43,7 +39,6 @@ Manuel Alejandro Escobar Mira - Group 2
 <img src="https://i.imgur.com/k07AxOQ.png" alt="edit-category" border="0">
 <p>You can edit the category name</p>
 <br>
-
 <h2>Comics</h2>
 <br>
 <img src="https://i.imgur.com/wLtnalB.png" alt="create-comic" border="0">
