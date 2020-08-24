@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 require('dotenv').config({ path: 'variables.env' });
 
-const conectarDB = async () => {
+const connectDB = async () => {
     try {
         await mongoose.connect(process.env.DB_MONGO, {
             useCreateIndex: true,
@@ -9,11 +9,11 @@ const conectarDB = async () => {
             useUnifiedTopology : true,
             useFindAndModify : true
         });
-        console.log('DB conectada');
+        console.log('DB conected');
     } catch (error) {
         console.log(error);
         process.exit(1); //Detener la app
     }
 }
 
-module.exports = conectarDB;
+module.exports = connectDB;

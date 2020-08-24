@@ -1,13 +1,13 @@
-const Usuario = require('../models/Usuario');
+const User = require('../models/User');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 
 exports.autenticarUsuario = async(req, res) => {
     //Revisar si hay errores
-    const errores = validationResult(req);
-    if ( !errores.isEmpty() ) {
-        return res.status(400).json({errores: errores.array()});
+    const errors = validationResult(req);
+    if ( !errors.isEmpty() ) {
+        return res.status(400).json({errors: errors.array()});
     }
 
     //Extraer email y password
@@ -15,26 +15,26 @@ exports.autenticarUsuario = async(req, res) => {
 
     try {
         //Revisar que sea un usuario registrado
-        let usuario = await Usuario.findOne({ email });
-        if (!usuario) {
-            return res.status(400).json({msg: 'El usuario no existe'});
+        let user = await User.findOne({ email });
+        if (!user) {
+            return res.status(400).json({msg: 'Incorrect email and/or password'});
         }
 
         //Revisar password
-        const passCorrecto = await bcryptjs.compare(password, usuario.password);
+        const passCorrecto = await bcryptjs.compare(password, user.password);
         if (!passCorrecto) {
-            return res.status(400).json({ msg: "Password Incorrecto" });
+            return res.status(400).json({ msg: "The password you entered was incorrect" });
         }
 
         //Si el pass es correcto Crear y firmar el JWT
         const payload = {
-            usuario: {
-                id: usuario.id
+            user: {
+                id: user.id
             }
         };
 
         //Firmar el JWT
-        jwt.sign(payload, process.env.SECRETA, {
+        jwt.sign(payload, process.env.SECRET, {
             expiresIn: 3600 //1 hora
         }, (error, token) => {
             if (error) throw error;
