@@ -4,7 +4,8 @@
   "description": "Api Rest Proyecto final Web",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "dev": "nodemon ."
   },
   "author": "Manuel Alejandro Escobar Mira",
   "license": "ISC",
