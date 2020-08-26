@@ -3,7 +3,7 @@ Final proyect web - api with node, express and mongo, 3 collections, can authent
 
 Manuel Alejandro Escobar Mira - Group 2
 <br>
-<h2>Dependencias</h2>
+<h2>Dependencies</h2>
 <ul>
     <li>Bcrypt</li>
     <li>dotenv</li>
